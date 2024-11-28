@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const chosenGift = localStorage.getItem("chosenGift");
 
     if (chosenGift) {
-      alert("🎁 Ya seleccionaste tu regalo. No puedes elegir otro.");
+      alert("🎁 GRACIAS POR ELEGIR, dejemos los otros para alguien mas 🙇🏽");
       gifts.forEach((gift) => {
         gift.style.pointerEvents = "none"; // Desactiva todos los regalos
       });
