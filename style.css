@@ -1,0 +1,128 @@
+/* Reset y estilo básico */
+body {
+    font-family:'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background: #125a18;
+    color: #333;
+    text-align: center;
+    background-image: url('fondo.jpeg'); /* Ruta de la imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición */
+    background-attachment: fixed; /* Hace que la imagen permanezca fija mientras haces scroll */
+  }
+  
+  header {
+    padding: 20px;
+    background: #901f1f;
+    color: #fff;
+  }
+  
+  header h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1em;
+  }
+  
+  /* Lista de regalos */
+  .gifts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .gift {
+    width: 80%;
+    max-width: 400px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .gift {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  
+  .gift img {
+    width: 50%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .gift:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .gift p {
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+    background: #901f1f;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 1.5em;
+    }
+  
+    header p {
+      font-size: 0.9em;
+    }
+    
+    .gift {
+      width: 90%;
+    }
+  }
+
+ /* Estilos para el contenedor principal de la vista previa */
+.preview-container {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 50px; /* Agrega espacio arriba */
+  }
+  
+  /* Estilo para la imagen de portada */
+  .cover {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente si es necesario */
+    margin-bottom: 20px; /* Espacio abajo entre la portada y el reproductor */
+  }
+  
+  .cover img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para el reproductor de audio */
+  audio {
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-top: 20px; /* Agrega espacio arriba del reproductor */
+  }
