@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const chosenGift = localStorage.getItem("chosenGift");
 
   if (chosenGift) {
-    alert("🎁 Ya seleccionaste tu regalo. No puedes elegir otro.");
     gifts.forEach((gift) => {
       gift.style.pointerEvents = "none"; // Desactiva todos los regalos
     });
