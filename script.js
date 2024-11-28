@@ -25,21 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Al cargar la página, verifica si el regalo ya fue seleccionado
-if (localStorage.getItem('giftSelected')) {
-  // Deshabilitar los regalos o evitar la acción de selección.
-  alert('🎁 Ya seleccionaste tu regalo. No puedes elegir otro.');
-} else {
-  // Si no se ha seleccionado un regalo, permite la interacción.
-  document.querySelectorAll('.gift').forEach(gift => {
-    gift.addEventListener('click', function () {
-      localStorage.setItem('giftSelected', true);
-      // Redirigir a la página de la canción
-      window.location.href = `preview.html?audio=${audioSrc}`;
-    });
-  });
-}
-
 // Esto reemplaza la URL sin agregarla al historial del navegador.
 window.history.replaceState(null, null, window.location.href);
 window.onpopstate = function () {
