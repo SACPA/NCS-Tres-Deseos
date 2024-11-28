@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Reproduce la canción
     audioPlayer.play();
   });
-
+  
   window.history.pushState(null, null, window.location.href); // Evita que se retroceda
   window.onpopstate = function () {
     // Al detectar retroceso, recarga la página
