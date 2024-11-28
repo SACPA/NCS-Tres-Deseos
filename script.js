@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const gifts = document.querySelectorAll(".gift");
 
+  // Espera un momento y recarga la página
+  setTimeout(function () {
+    location.reload(); // Recarga la página
+  }, 200);  // 500 ms de retraso antes de recargar
 
   // Revisa si ya se eligió un regalo
   const chosenGift = localStorage.getItem("chosenGift");
@@ -18,14 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Guarda la elección en localStorage
         localStorage.setItem("chosenGift", audioSrc);
-
-        window.onpopstate = function () {
-
-          // Espera un momento y recarga la página
-          setTimeout(function () {
-            location.reload(); // Recarga la página
-          }, 100);  // 500 ms de retraso antes de recargar
-        };
 
         // Redirige al usuario a la página de preview
         window.location.href = `preview.html?audio=${audioSrc}`;
