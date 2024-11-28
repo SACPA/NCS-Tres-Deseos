@@ -24,4 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Revisar si el usuario regresa desde preview.html
+  window.onpageshow = function(event) {
+    // Verificar si el usuario ha vuelto desde preview.html (es decir, usando el botón de retroceso)
+    const chosenGift = localStorage.getItem("chosenGift");
+
+    if (chosenGift) {
+      alert("🎁 Ya seleccionaste tu regalo. No puedes elegir otro.");
+      gifts.forEach((gift) => {
+        gift.style.pointerEvents = "none"; // Desactiva todos los regalos
+      });
+    }
+  };
+
+  // Esto es para manejar el retroceso en la navegación (evitar que el usuario vuelva)
+  window.history.pushState(null, null, window.location.href);
+  window.onpopstate = function () {
+    location.replace(window.location.href);  // Reemplaza la URL actual para evitar el retroceso
+  };
 });
