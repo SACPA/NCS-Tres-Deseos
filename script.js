@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const chosenGift = localStorage.getItem("chosenGift");
 
     if (chosenGift) {
-      alert("🎁 GRACIAS POR ELEGIR, dejemos los otros para alguien mas 🙇🏽");
+      alert("🎁 GRACIAS POR ELEGIR, \nDejemos los otros para alguien mas 🙇🏽");
       gifts.forEach((gift) => {
         gift.style.pointerEvents = "none"; // Desactiva todos los regalos
       });
