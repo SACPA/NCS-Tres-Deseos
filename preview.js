@@ -26,10 +26,5 @@ document.addEventListener("DOMContentLoaded", () => {
     audioPlayer.play();
   });
   
-  window.history.pushState(null, null, window.location.href); // Evita que se retroceda
-  window.onpopstate = function () {
-    // Al detectar retroceso, recarga la página
-    location.reload();
-    
-  };
+
   
