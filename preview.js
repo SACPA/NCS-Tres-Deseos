@@ -30,5 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.onpopstate = function () {
     // Al detectar retroceso, recarga la página
     location.reload();
+    
   };
   
