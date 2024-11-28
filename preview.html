@@ -19,5 +19,13 @@
     </div>
   </main>
   <script src="preview.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+      location.reload();
+    };
+  });
+</script>
 </body>
 </html>
