@@ -24,6 +24,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     }
+    window.addEventListener('load', function() {
+      window.history.pushState(null, null, window.location.href);
+      window.onpopstate = function () {
+        location.reload();
+      };
+    });
+
+    // Evitar retroceder y mostrar la capa bloqueadora
+window.history.pushState(null, null, window.location.href);  // Añade un nuevo estado al historial
+
+window.onpopstate = function() {
+  // Muestra la capa bloqueadora cuando el usuario intente retroceder
+  document.getElementById("back-blocker").style.display = "block";
+  
+  // Espera un momento y recarga la página
+  setTimeout(function() {
+    location.reload(); // Recarga la página
+  }, 500);  // 500 ms de retraso antes de recargar
+};
+
+// Ocultar la capa bloqueadora si se realiza otra acción (ej. cuando se hace un clic en la capa)
+document.getElementById("back-blocker").addEventListener("click", function() {
+  document.getElementById("back-blocker").style.display = "none";
+});
 
 
   });
