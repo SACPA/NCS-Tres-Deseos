@@ -2,25 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const audioFile = urlParams.get("audio");
 
-  // Esto reemplaza la URL sin agregarla al historial del navegador.
-  window.history.replaceState(null, null, window.location.href);
-  window.onpopstate = function () {
-    location.replace(window.location.href);  // Previene el retroceso.
-  };
-
-  // Evitar retroceder y mostrar la capa bloqueadora
-  window.history.pushState(null, null, window.location.href);  // Añade un nuevo estado al historial
-
-  window.onpopstate = function () {
-    // Muestra la capa bloqueadora cuando el usuario intente retroceder
-    document.getElementById("back-blocker").style.display = "block";
-  };
-
-  // Ocultar la capa bloqueadora si se realiza otra acción (ej. cuando se hace un clic en la capa)
-  document.getElementById("back-blocker").addEventListener("click", function () {
-    document.getElementById("back-blocker").style.display = "none";
-  });
-
   // Si no hay archivo de audio, redirige al usuario a la página principal
   if (!audioFile) {
     window.location.href = "index.html";
@@ -34,14 +15,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const cover = document.getElementById("cover");
   if (audioFile === "preview1.mp3") {
     cover.src = "cover1.jpg";  // Asegúrate de tener las imágenes adecuadas
+    displaySongName("MARI");
   } else if (audioFile === "preview2.mp3") {
     cover.src = "cover2.jpg";
+    displaySongName("NADA QUE OCULTAR");
   } else if (audioFile === "preview3.mp3") {
     cover.src = "cover3.jpg";
+    displaySongName("BBY NO SEAS ASI");
   }
+  
   // Reproduce la canción
   audioPlayer.play();
 
+  // Función para mostrar el nombre de la canción
+  function displaySongName(songName) {
+    const songNameElement = document.createElement("h2");  // Crea un nuevo elemento <h2>
+    songNameElement.textContent = songName;  // Asigna el nombre de la canción
+    document.querySelector(".preview-container").insertBefore(songNameElement, audioPlayer);  // Inserta el nombre antes del reproductor
+  }
 });
-
-
