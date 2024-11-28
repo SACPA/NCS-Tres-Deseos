@@ -1,14 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const gifts = document.querySelectorAll(".gift");
   
-
-    window.history.pushState(null, null, window.location.href); // Evita que se retroceda
-    window.onpopstate = function () {
-      // Al detectar retroceso, recarga la página
-      location.reload();
-    };
     
-
     // Revisa si ya se eligió un regalo
     const chosenGift = localStorage.getItem("chosenGift");
   
@@ -31,5 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     }
+
+    window.history.pushState(null, null, window.location.href); // Evita que se retroceda
+    window.onpopstate = function () {
+      // Al detectar retroceso, recarga la página
+      location.reload();
+    };
+
   });
   
