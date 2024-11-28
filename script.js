@@ -2,33 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const gifts = document.querySelectorAll(".gift");
 
 
-  // Revisa si ya se eligió un regalo
-  const chosenGift = localStorage.getItem("chosenGift");
-
-  if (chosenGift) {
-    alert("🎁 Ya seleccionaste tu regalo. No puedes elegir otro.");
-    gifts.forEach((gift) => {
-      gift.style.pointerEvents = "none"; // Desactiva todos los regalos
-    });
-  } else {
-    gifts.forEach((gift) => {
-      gift.addEventListener("click", (event) => {
-        const selectedGift = event.currentTarget;
-        const audioSrc = selectedGift.getAttribute("data-audio");
-
-        // Guarda la elección en localStorage
-        localStorage.setItem("chosenGift", audioSrc);
-
-        // Redirige al usuario a la página de preview
-        window.location.href = `preview.html?audio=${audioSrc}`;
-      });
-    });
-  }
-
   // Al cargar la página, verifica si el regalo ya fue seleccionado
 if (localStorage.getItem('giftSelected')) {
   // Deshabilitar los regalos o evitar la acción de selección.
-  alert('Ya has seleccionado un regalo. ¡No puedes volver a hacerlo!');
+  alert('🎁 Ya seleccionaste tu regalo. No puedes elegir otro.');
 } else {
   // Si no se ha seleccionado un regalo, permite la interacción.
   document.querySelectorAll('.gift').forEach(gift => {
