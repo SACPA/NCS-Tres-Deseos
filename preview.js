@@ -36,11 +36,6 @@ window.onpopstate = function () {
   window.onpopstate = function () {
     // Muestra la capa bloqueadora cuando el usuario intente retroceder
     document.getElementById("back-blocker").style.display = "block";
-
-    // Espera un momento y recarga la página
-    setTimeout(function () {
-      location.reload(); // Recarga la página
-    }, 500);  // 500 ms de retraso antes de recargar
   };
 
   // Ocultar la capa bloqueadora si se realiza otra acción (ej. cuando se hace un clic en la capa)
