@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const gifts = document.querySelectorAll(".gift");
 
-  // Espera un momento y recarga la página
-  setTimeout(function () {
-    location.reload(); // Recarga la página
-  }, 200);  // 500 ms de retraso antes de recargar
-
   // Revisa si ya se eligió un regalo
   const chosenGift = localStorage.getItem("chosenGift");
 
