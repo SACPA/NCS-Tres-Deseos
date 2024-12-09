@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function displaySongName(songName) {
     const songNameElement = document.createElement("h2");  // Crea un nuevo elemento <h2>
     songNameElement.textContent = songName;  // Asigna el nombre de la canción
-    songNameElement.classList.add("song-name");  // Añade la clase CSS
+    songNameElement.classList.add("songName");  // Añade la clase CSS
     document.querySelector(".preview-container").insertBefore(songNameElement, audioPlayer);  // Inserta el nombre antes del reproductor
   }
 });
