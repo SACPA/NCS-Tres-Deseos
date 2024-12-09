@@ -129,6 +129,6 @@ body {
     margin-top: 20px; /* Agrega espacio arriba del reproductor */
   }
 
-  .songName h2{
+  .songName {
     color: #ffffff;
   }
