@@ -1,6 +1,8 @@
 /* Reset y estilo básico */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
 body {
-    font-family:'Courier New', Courier, monospace;
+    font-family:"Playwrite HR Lijeva", cursive;
     margin: 0;
     padding: 0;
     background: #125a18;
@@ -125,4 +127,8 @@ body {
     border: none;
     outline: none;
     margin-top: 20px; /* Agrega espacio arriba del reproductor */
+  }
+
+  .song-name{
+    color: #ffffff;
   }
