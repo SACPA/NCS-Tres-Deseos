@@ -24,14 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
     displaySongName("BBY NO SEAS ASI");
   }
   
-  // Reproduce la canción
+
   audioPlayer.play();
 
-  // Función para mostrar el nombre de la canción
+
   function displaySongName(songName) {
-    const songNameElement = document.createElement("h2");  // Crea un nuevo elemento <h2>
-    songNameElement.textContent = songName;  // Asigna el nombre de la canción
-    songNameElement.classList.add("songName");  // Añade la clase CSS
-    document.querySelector(".preview-container").insertBefore(songNameElement, audioPlayer);  // Inserta el nombre antes del reproductor
+    const songNameElement = document.createElement("h2");  
+    songNameElement.textContent = songName;  
+    songNameElement.classList.add("songName");  
+    document.querySelector(".preview-container").insertBefore(songNameElement, audioPlayer); 
   }
 });
